@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{base::layout(~{::section})}">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 offset-md-2">
+
+					<div class="my-card mt-1">
+
+						<div th:if="${session.message}"
+							th:classappend="${session.message.type}" role="alert">
+							<p th:text="${session.message.content}"></p>
+							<script th:if="${session.message}">
+        // Remove the 'message' attribute from the session using JavaScript after displaying it
+        setTimeout(function() {
+            /* Call a function to remove the 'message' attribute from the session */
+            var sessionMessage = /*[[${session.message}]]*/ null;
+            if (sessionMessage) {
+                /* Call a function to remove the 'message' attribute from the session */
+            }
+        }, 5000); // Remove message after 5 seconds (adjust as needed)
+    </script>
+						</div>
+
+
+						<h1 class="text-center">Sign-up here</h1>
+						<!-- th:object="${user} giving an empty user object to form so it can bind the values comming from form to user that is mvc structure in spring -->
+						<form action="" th:action="@{/do_register}"
+							method="POST" th:object="${user}">
+
+							<div class="form-group">
+								<label for="name_field">Name</label> <input name="name"
+									type="text" class="form-control" th:classappend="${#fields.hasErrors('name') ? 'is-invalid':''}" id="name_field"
+									aria-describedby="emailHelp" placeholder="Enter here" required>
+								<div class="invalid-feedback" th:each="e : ${#fields.errors()}" th:text="${e}">Please provide a valid city.
+								</div>
+								</div>
+
+								<div class="form-group">
+									<label for="email_field">E-Mail</label> <input name="email"
+										type="email" class="form-control" id="email_field"
+										aria-describedby="emailHelp" placeholder="Enter here" required>
+
+								</div>
+
+								<div class="form-group">
+									<label for="password_field">Password</label> <input
+										name="password" type="password" class="form-control"
+										id="password_field" aria-describedby="emailHelp"
+										placeholder="Enter here" required>
+
+								</div>
+
+								<div class="form-group">
+									<label for="textarea_feild">About</label>
+									<textarea name="about" class="form-control" id="textarea_feild"
+										rows="3" placeholder="tell us about yourself" required></textarea>
+								</div>
+
+								<div class="container text-center">
+									<button class="btn bg-primary text white" type="submit">Submit</button>
+									<button class="btn bg-secondary text white" type="reset">Reset</button>
+
+								</div>
+						</form>
+
+					</div>
+
+
+
+
+
+
+
+
+
+
+				</div>
+			</div>
+		</div>
+
+
+	</section>
+
+</body>
+</html>

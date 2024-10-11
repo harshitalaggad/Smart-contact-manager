@@ -1,0 +1,101 @@
+body {
+	background: #e2e2e2 !important;
+}
+
+.bg.primary {
+	background: #009688 !important;
+}
+
+.banner {
+	width: 100%;
+	height: 93vh;
+	background: linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)),
+		url(../img/banner.jpg);
+	color: white;
+	background-size: cover;
+	background-position: center;
+    background-repeat: no-repeat;
+}
+
+.my-card {
+	padding: 20px;
+}
+
+#login .container #login-row #login-column #login-box {
+	margin-top: 120px;
+	max-width: 600px;
+	height: 420px;
+	border: 1px solid #9C9C9C;
+	background-color: #EAEAEA;
+}
+
+#login .container #login-row #login-column #login-box #login-form {
+	padding: 20px;
+}
+
+#login .container #login-row #login-column #login-box #login-form #register-link
+	{
+	margin-top: -85px;
+}
+
+/*side bass css*/
+@media only screen and (max-width: 600px) {
+	.sidebar {
+		display: none;
+		background: white;
+		width: 80% !important;
+		height: 100%;
+		position: fixed;
+		padding-top: 20px;
+		z-index: 9999999999999999999999999999999999999999;
+	}
+	.content {
+		margin-left: 0;
+	}
+}
+
+.sidebar {
+	background: white;
+	height: 100%;
+	width: 18%;
+	position: fixed;
+	padding-top: 45px;
+}
+
+.sidebar .crossbtn {
+	position: absolute;
+	top: 0;
+	right: 35px;
+	font-size: 36px;
+	cursor: pointer;
+}
+
+.sidebar a {
+	display: block;
+	width: 100%;
+	padding: 10px 25px;
+	text-decoration: none;
+	color: gray;
+}
+
+.sidebar a:hover {
+	background: #e2e2e2;
+}
+
+.sidebar .divider {
+	background: #e2e2e2;
+	height: .5px;
+	width: 100%
+}
+
+.content {
+	margin-left: 20%;
+}
+
+.my_profile_picture {
+	object-fit: cover;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	border: 1px solid black;
+}
